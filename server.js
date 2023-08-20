@@ -11,11 +11,7 @@ app.use(
   cors({
     origin: (origin, callback) => {
       if (
-        [
-          "https://www.google.com",
-          "http://127.0.0.1:3000",
-          "http://localhost:5173",
-        ].includes(origin) ||
+        ["https://users-auth-frontend.vercel.app/"].includes(origin) ||
         !origin
       ) {
         callback(null, true);
