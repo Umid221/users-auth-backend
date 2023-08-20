@@ -9,16 +9,7 @@ const verifyJWT = require("./middleware/verifyJWT");
 const app = express();
 app.use(
   cors({
-    origin: (origin, callback) => {
-      if (
-        ["https://users-auth-frontend.vercel.app/"].includes(origin) ||
-        !origin
-      ) {
-        callback(null, true);
-      } else {
-        callback(new Error("not allowed by CORS"));
-      }
-    },
+    origin: "https://users-auth-frontend.vercel.app",
     optionsSuccess: 200,
   })
 );
